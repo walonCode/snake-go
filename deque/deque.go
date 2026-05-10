@@ -20,6 +20,21 @@ func (d *Deque[T])At(index int)T{
 	return d.items[index]
 }
 
+func (d *Deque[T])PopBack()T{
+	lastIndex := len(d.items) - 1
+	value := d.items[lastIndex]
+	d.items  = d.items[:lastIndex]
+
+	return value
+}
+
+func (d *Deque[T]) PopFront()T{
+	value := d.items[0]
+	d.items = d.items[1:]
+
+	return value
+}
+
 func New[T any ](values ...T)Deque[T]{
 	return Deque[T]{
 		items: values,
