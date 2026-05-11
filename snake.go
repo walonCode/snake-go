@@ -36,14 +36,14 @@ func (s *snake)update(){
 
 func (s *snake) reset() {
 	s.body = deque.New(
-		rl.Vector2{6,9},
-		rl.Vector2{5,9},
-		rl.Vector2{4,9},
+		rl.Vector2{X:6,Y:9},
+		rl.Vector2{X:5,Y:9},
+		rl.Vector2{X:4,Y:9},
 	)
-	s.direction = rl.Vector2{1,0}
+	s.direction = rl.Vector2{X:1,Y:0}
 }
 
-func new() *snake{
+func newSnake() *snake{
 	return &snake{
 		addSegment: false,
 		direction: rl.Vector2{X:1, Y: 0},
