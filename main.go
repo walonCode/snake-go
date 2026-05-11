@@ -40,9 +40,9 @@ func eventTriggered(interval float64)bool {
 func main(){
 	fmt.Println("Starting the game....")
 
+	rl.SetConfigFlags(rl.FlagWindowResizable | rl.FlagWindowMaximized)
 	rl.InitWindow(int32(2 * offset + cellsize * cellcount), int32(2 * offset + cellsize * cellcount), "Snake Game")
 	rl.SetTargetFPS(60)
-	rl.SetConfigFlags(rl.FlagWindowResizable | rl.FlagWindowMaximized)
 	defer rl.CloseWindow()
 
 	game := newGame()
