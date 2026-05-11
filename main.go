@@ -68,13 +68,13 @@ func main(){
             allowMove = false;
 		}
 
-		if rl.IsKeyPressed(rl.KeyLeft) && game.snake.direction.Y != 1 && allowMove {
+		if rl.IsKeyPressed(rl.KeyLeft) && game.snake.direction.X != 1 && allowMove {
 	  		game.snake.direction = rl.Vector2{X:-1, Y:0};
             game.running = true;
             allowMove = false;
 		}
 
-		if rl.IsKeyPressed(rl.KeyRight) && game.snake.direction.Y != -1 && allowMove {
+		if rl.IsKeyPressed(rl.KeyRight) && game.snake.direction.X != -1 && allowMove {
 	  		game.snake.direction = rl.Vector2{X:1, Y:0};
             game.running = true;
             allowMove = false;
