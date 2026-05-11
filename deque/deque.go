@@ -17,10 +17,19 @@ func (d *Deque[T])Size()int{
 }
 
 func (d *Deque[T])At(index int)T{
+	var zero T
+	if d.Size() == 0 || index < 0 || index > d.Size(){
+		return zero
+	}
 	return d.items[index]
 }
 
 func (d *Deque[T])PopBack()T{
+	var zero T
+	if d.Size() == 0 {
+		return zero
+	}
+	
 	lastIndex := len(d.items) - 1
 	value := d.items[lastIndex]
 	d.items  = d.items[:lastIndex]
@@ -29,6 +38,11 @@ func (d *Deque[T])PopBack()T{
 }
 
 func (d *Deque[T]) PopFront()T{
+	var zero T
+	if d.Size() == 0 {
+		return zero
+	}
+	
 	value := d.items[0]
 	d.items = d.items[1:]
 
