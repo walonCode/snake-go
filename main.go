@@ -89,7 +89,8 @@ func main(){
 		}, 5, rl.DarkGreen)
 		rl.DrawText("Snake Game", int32(offset) - 5, 20, 40 , rl.DarkGreen)
 		rl.DrawText(fmt.Sprintf("%d", game.score), int32(offset) - 5, int32(offset) + int32(cellsize) + 10, 40, rl.DarkGreen)
-
+		game.draw()
+		
 		rl.EndDrawing()
 	}
 }
